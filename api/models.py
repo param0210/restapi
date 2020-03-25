@@ -16,6 +16,7 @@ class MyUser(AbstractUser):
     date_of_birth=models.DateField(null=True,blank=True)
     gender=models.CharField(max_length=100,choices=GENDER,null=True,blank=True)
     
+    
     class Meta:
         verbose_name_plural='MyUser'
      
