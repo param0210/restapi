@@ -15,8 +15,9 @@ class MyUser(AbstractUser):
     last_name=models.CharField(max_length=100,null=True,blank=True)
     date_of_birth=models.DateField(null=True,blank=True)
     gender=models.CharField(max_length=100,choices=GENDER,null=True,blank=True)
+    mobile_number=models.CharField(max_length=100,null=True,blank=True)
     
     
     class Meta:
-        verbose_name_plural='MyUser'
+        verbose_name_plural='Users'
      
