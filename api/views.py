@@ -48,8 +48,7 @@ class SignupViewSet(viewsets.ModelViewSet):
            user.set_password(data.get('password'))
            user.save()
            if user:
-               token=Token.objects.create(user_id=user.id)
-               token.save()
+               token=Token.objects.get(user_id=user.id)
                user_dict.update({'token':token.key,'id':user.id})
             
            return Response({"data":user_dict,"message":"user registered successfully","status":status.HTTP_201_CREATED},status=status.HTTP_201_CREATED)
