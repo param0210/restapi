@@ -7,6 +7,8 @@ from rest_framework.routers import DefaultRouter
 router=DefaultRouter()
 
 router.register(r'signup', views.SignupViewSet,basename='signup')
+router.register(r'upload', views.ImageUploadViewSet,basename='upload')
+router.register(r'user', views.UserInfoViewSet,basename='user')
 
 urlpatterns=[
     url(r'^/',include(router.urls)),
