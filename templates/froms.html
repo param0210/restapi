@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- html tutorial -->
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="description" content="html tutorial">
+	<meta name="keywords" content="html,html tutuorials .htm">
+	<meta name="robots" content="INDEX,FOLLOW">
+	<!-- for adding css file -->
+	<link rel="stylesheet" href="test.css">
+	<!-- for adding .js file -->
+	<script src="test.js"></script>
+	<title>learn html</title>
+</head>
+
+<body>
+	<h1>html forms</h1>
+	<form action="backend.py">
+		<label for="name">Name</label>
+		<div>
+			<input type="text" name="myname" id="name">
+		</div>
+		<br>
+		<div>
+			Age:<input type="number" name="myage">
+		</div>
+		<br>
+		<div>
+			Gender:<input type="text" name="mygender">
+		</div>
+		<br>
+		<div>
+			gender:male<input type="radio" name="gender">female<input type="radio" name="gender">others<input
+				type="radio" name="gender">
+		</div>
+		<br>
+		<div>
+			date:<input type="date" name="mydate">
+		</div>
+		<br>
+		<div>
+			write about yourself:<br><textarea name="textarea" cols="70" rows="10"></textarea>
+		</div>
+		<br>
+		<div>
+			<label for="car">Car</label>
+			<select name="mycar" id="car">
+				<option value="Audi">Audi</option>
+				<option value="Tesla" selected>Tesla</option>
+
+			</select>
+		</div>
+		<br>
+		<div>
+			<input type="submit" value="submit values">
+			<input type="reset" value="reset values">
+		</div>
+	</form>
+
+</body>
+
+</html>
