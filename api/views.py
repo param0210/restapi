@@ -8,7 +8,8 @@ from rest_framework import status
 from .serializers import *
 from rest_framework.authtoken.models import Token
 import os
-
+from datetime import datetime
+from django.utils import timezone
 
 
 class HelloView(APIView):
@@ -28,11 +29,13 @@ class SignupViewSet(viewsets.ModelViewSet):
         return MyUser.objects.all()
     
     def create(self,request,*args,**kwargs):
+        print("current time",datetime.now())
+        print("timezone is",timezone.now())
+
         
         data=request.data
         if MyUser.objects.filter(username=data.get('username')).exists():
             return Response ({"message":"user already exists with same username"})
-        print(data.get('mobile_number'))
         if MyUser.objects.filter(mobile_number=data.get('mobile_number')).exists():
            return Response ({"message":"user already exists with same mobile_number"})
     
@@ -112,7 +115,9 @@ class UserInfoViewSet(viewsets.ModelViewSet):
     serializer_class=(MyUserSerializer)
     
     def get_queryset(self):
+
         user=MyUser.objects.all()
+
         return user.filter(images__salary='10000')
 
 

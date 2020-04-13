@@ -6,7 +6,7 @@ from.models import *
 def rating(modeladmin,request,queryset):
     queryset.update(rating=1)
     
-    rating.short_description="change rating"
+    rating.short_description="update rating"
          
 class MyUsreA(admin.ModelAdmin):
     exclude=('groups','user_permissions')

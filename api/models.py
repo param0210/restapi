@@ -17,16 +17,10 @@ class MyUser(AbstractUser):
     date_of_birth=models.DateField(null=True,blank=True)
     gender=models.CharField(max_length=100,choices=GENDER,null=True,blank=True)
     mobile_number=models.CharField(max_length=100,null=True,blank=True)
-#     image=models.FileField(upload_to='media/',null=True,blank=True)
-
-    
     
     class Meta:
         verbose_name_plural='Users'
-        
-    
-     
-    
+           
 RATING=(
     (1,1),
     (2,2),
@@ -40,5 +34,6 @@ class ImageUpload(models.Model):
     designation=models.CharField(max_length=100,blank=True,null=True)
     salary=models.IntegerField(blank=True,null=True)
     rating=models.PositiveIntegerField(choices=RATING,blank=True,null=True)
+    created_on=models.DateTimeField(auto_now_add=True,blank=True,null=True)
 
     
